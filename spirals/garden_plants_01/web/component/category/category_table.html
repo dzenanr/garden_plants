@@ -1,0 +1,48 @@
+<polymer-element name="category-table">
+  <template>
+    <style>
+      table {
+        border-top: 1px solid #999;
+        border-left: 1px solid #999;
+        border-collapse: collapse;
+      }  
+      caption {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #003366;
+        padding: 1px;
+      }    
+      th, td {
+        padding: 1px;
+        border-right: 1px solid #999999;
+        border-bottom: 1px solid #999999;
+      }
+      th {
+        font-family: verdana, sans-serif;
+        font-weight: bold;
+        color: #ffffff;
+        background: #336799;
+      }
+      td {
+        background: #ffe4b5;
+      }      
+    </style>
+    <table>
+      <caption class="marker">
+        Categories
+      </caption>
+      <tr>
+        <th>Latin Name</th>
+        <th>Description</th>
+      </tr>
+      <tbody template repeat="{{category in categories.toList()}}">
+        <tr>
+          <td>{{category.latinName}}</td>
+          <td>{{category.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </template>
+  <script type="application/dart" src="category_table.dart"></script>
+</polymer-element>
