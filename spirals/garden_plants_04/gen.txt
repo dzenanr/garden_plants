@@ -1,0 +1,1 @@
+--genall C:\Users\ridjanod.FSA-RIDJANOD-2\dart\ui\garden_plants garden plants

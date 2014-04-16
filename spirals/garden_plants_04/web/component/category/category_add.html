@@ -1,0 +1,50 @@
+<polymer-element name="category-add">
+  <template>
+    <style>
+      label {
+        font-family: verdana, sans-serif;
+        font-weight: bold;
+        color: #ffffff;
+        background: #336799;
+        padding: 1px;
+        border-right: 1px solid #999999;
+        border-bottom: 1px solid #999999;
+      }
+      input {
+        font-family: arial, sans-serif;
+        font-size: 14px;
+      }
+      button {
+        padding: 1px;
+        background: #ffcc99;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-style: outset;
+        border-color: #d7b9c9;
+        font-weight: bold;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button:active {
+        background: orangered;
+        border-color: blue;
+      } 
+    </style>
+    <label for="latinName">Latin Name</label>
+    <input id="latinName" type="text" size="32"/>
+    <br/>
+    <label for="description">Description</label>
+    <input id="description" type="text" size="96"/>
+    <br/>
+    <label for="isEdible">Is Edible?</label>
+    <input id="isEdible" type="text" size="8"/>
+    <br/>
+    <label for="harvestZone">Harvest Zone</label>
+    <input id="harvestZone" type="text" size="8"/>
+    <br/>
+    <button on-click="{{add}}">Add</button>
+    <span id="message"></span>
+  </template>
+  <script type="application/dart" src="category_add.dart"></script>
+</polymer-element>
