@@ -29,7 +29,7 @@ class PlantsModel extends PlantsEntries {
       garden1.name = 'sun'; 
       garden1.description = 'series'; 
       garden1.latitude = 20.977314271756033; 
-      garden1.longiitude = 50.93861381025506; 
+      garden1.longitude = 50.93861381025506; 
       gardens.add(garden1); 
  
     var garden1plants1 = new Plant(garden1.plants.concept); 
@@ -50,7 +50,7 @@ class PlantsModel extends PlantsEntries {
       garden2.name = 'phone'; 
       garden2.description = 'water'; 
       garden2.latitude = 18.343101498382087; 
-      garden2.longiitude = 68.36866823209898; 
+      garden2.longitude = 68.36866823209898; 
       gardens.add(garden2); 
  
     var garden2plants1 = new Plant(garden2.plants.concept); 
@@ -71,7 +71,7 @@ class PlantsModel extends PlantsEntries {
       garden3.name = 'deep'; 
       garden3.description = 'distance'; 
       garden3.latitude = 13.105025828967708; 
-      garden3.longiitude = 6.52102331037171; 
+      garden3.longitude = 6.52102331037171; 
       gardens.add(garden3); 
  
     var garden3plants1 = new Plant(garden3.plants.concept); 

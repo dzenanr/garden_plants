@@ -1,0 +1,91 @@
+<polymer-element name="garden-table">
+  <link rel="import" href="garden_add.html"/>
+  <link rel="import" href="garden_edit.html"/>
+  <template>
+    <style>
+      table {
+        border-top: 1px solid #999;
+        border-left: 1px solid #999;
+        border-collapse: collapse;
+      }  
+      caption {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #003366;
+        padding: 1px;
+      }    
+      th, td {
+        padding: 1px;
+        border-right: 1px solid #999999;
+        border-bottom: 1px solid #999999;
+      }
+      th {
+        font-family: verdana, sans-serif;
+        font-weight: bold;
+        color: #ffffff;
+        background: #336799;
+      }
+      td {
+        background: #ffe4b5;
+      }  
+      button {
+        padding: 1px;
+        background: #ffcc99;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-style: outset;
+        border-color: #d7b9c9;
+        font-weight: bold;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button:active {
+        background: orangered;
+        border-color: blue;
+      } 
+      .marker {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #003366;
+        background: #ffe4b5;
+        padding: 1px;
+      } 
+    </style>
+    <table>
+      <caption class="marker">
+        Gardens
+        <button id="show-add" on-click="{{show}}">Show Add</button>
+      </caption>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Remove</th>
+      </tr>
+      <tbody template repeat="{{garden in gardens.internalList}}">
+        <tr>
+          <td>{{garden.name}}</td>
+          <td>{{garden.description}}</td>
+          <td><button on-click="{{edit}}" garden-name={{garden.name}}>Edit</button></td>
+          <td><button on-click="{{delete}}" garden-name={{garden.name}}>Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <template if="{{showAdd}}">
+      <garden-add
+        gardens="{{gardens}}">
+      </garden-add>
+    </template>
+    <template if="{{showEdit}}">
+      <garden-edit
+        gardens="{{gardens}}"
+        garden="{{garden}}"
+      >
+      </garden-edit>
+    </template>
+  </template>
+  <script type="application/dart" src="garden_table.dart"></script>
+</polymer-element>

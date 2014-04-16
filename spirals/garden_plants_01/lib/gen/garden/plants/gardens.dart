@@ -24,8 +24,8 @@ abstract class GardenGen extends ConceptEntity<Garden> {
   double get latitude => getAttribute("latitude"); 
   set latitude(double a) => setAttribute("latitude", a); 
   
-  double get longiitude => getAttribute("longiitude"); 
-  set longiitude(double a) => setAttribute("longiitude", a); 
+  double get longitude => getAttribute("longitude"); 
+  set longitude(double a) => setAttribute("longitude", a); 
   
   Plants get plants => getChild("plants"); 
   

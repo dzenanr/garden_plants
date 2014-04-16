@@ -1,0 +1,15 @@
+name: garden_plants
+version: 0.0.5
+author: Your Name
+description: garden_plants Polymer application that uses dartling for its model.
+homepage: http://ondart.me/
+dependencies:
+  browser: any
+  dartling:
+    git: https://github.com/dzenanr/dartling.git
+  dartling_default_app:
+    git: https://github.com/dzenanr/dartling_default_app.git
+  polymer: any
+transformers:
+- polymer:
+    entry_points: web/garden_plants.html

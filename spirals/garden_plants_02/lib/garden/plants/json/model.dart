@@ -47,7 +47,7 @@ var gardenPlantsModelJson = r'''
                 },
                 {
                     "sequence":40,
-                    "name":"longiitude",
+                    "name":"longitude",
                     "category":"attribute",
                     "type":"double",
                     "init":"",

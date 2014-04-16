@@ -147,7 +147,7 @@ testGardenPlantsGardens(
       garden.name = 'walking'; 
       garden.description = 'coffee'; 
       garden.latitude = 58.91220569683633; 
-      garden.longiitude = 94.37786658543014; 
+      garden.longitude = 94.37786658543014; 
       var added = selectedGardens.add(garden); 
       expect(added, isTrue); 
       expect(gardens.length, equals(++gardensCount)); 
@@ -276,7 +276,7 @@ testGardenPlantsGardens(
       expect(randomGarden.name, equals(randomGardenCopy.name)); 
       expect(randomGarden.description, equals(randomGardenCopy.description)); 
       expect(randomGarden.latitude, equals(randomGardenCopy.latitude)); 
-      expect(randomGarden.longiitude, equals(randomGardenCopy.longiitude)); 
+      expect(randomGarden.longitude, equals(randomGardenCopy.longitude)); 
  
       expect(randomGarden.id, isNotNull); 
       expect(randomGardenCopy.id, isNotNull); 
@@ -302,7 +302,7 @@ testGardenPlantsGardens(
       garden.name = 'corner'; 
       garden.description = 'cream'; 
       garden.latitude = 89.83201895489576; 
-      garden.longiitude = 40.583077224142485; 
+      garden.longitude = 40.583077224142485; 
       gardens.add(garden); 
       expect(gardens.length, equals(++gardenCount)); 
       gardens.remove(garden); 
@@ -326,7 +326,7 @@ testGardenPlantsGardens(
       garden.name = 'notch'; 
       garden.description = 'concern'; 
       garden.latitude = 42.695042943107765; 
-      garden.longiitude = 91.40529652111016; 
+      garden.longitude = 91.40529652111016; 
       gardens.add(garden); 
       expect(gardens.length, equals(++gardenCount)); 
       gardens.remove(garden); 
@@ -450,7 +450,7 @@ testGardenPlantsGardens(
       garden.name = 'photo'; 
       garden.description = 'message'; 
       garden.latitude = 65.43080395955889; 
-      garden.longiitude = 34.389216904491605; 
+      garden.longitude = 34.389216904491605; 
       gardens.add(garden); 
       expect(gardens.length, equals(++gardenCount)); 
       gardens.remove(garden); 
