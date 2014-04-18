@@ -1,5 +1,7 @@
 <polymer-element name="category-table">
   <link rel="import" href="category_add.html"/>
+  <link rel="import" href="category_edit.html"/>
+  <link rel="import" href="../plant/plant_table.html"/>
   <template>
     <style>
       table {
@@ -61,11 +63,17 @@
       <tr>
         <th>Latin Name</th>
         <th>Description</th>
+        <th>Edit</th>
+        <th>Remove</th>
+        <th>Plants</th>
       </tr>
       <tbody template repeat="{{category in categories.internalList}}">
         <tr>
           <td>{{category.latinName}}</td>
           <td>{{category.description}}</td>
+          <td><button on-click="{{edit}}" category-latin-name="{{category.latinName}}">Edit</button></td>
+          <td><button on-click="{{delete}}" category-latin-name="{{category.latinName}}">Remove</button></td>
+          <td><button on-click="{{showCategoryPlants}}" category-latin-name="{{category.latinName}}">Show</button>
         </tr>
       </tbody>
     </table>
@@ -73,6 +81,19 @@
       <category-add
         categories="{{categories}}">
       </category-add>
+    </template>
+    <template if="{{showEdit}}">
+      <category-edit
+        categories="{{categories}}"
+        category="{{category}}"
+      >
+      </category-edit>
+    </template>
+    <template if="{{showPlants}}">
+      <plant-table id="plant-table"
+        category="{{category}}"
+      >
+      </task-table>
     </template>
   </template>
   <script type="application/dart" src="category_table.dart"></script>

@@ -1,0 +1,35 @@
+<polymer-element name="polymer-app">
+  <link rel="import" href="category/category_table.html">
+  <link rel="import" href="garden/garden_table.html">
+  <template>
+    <style>
+      button {
+        padding: 1px;
+        background: #ffcc99;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-style: outset;
+        border-color: #d7b9c9;
+        font-weight: bold;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button:active {
+        background: orangered;
+        border-color: blue;
+      } 
+    </style>
+    <button on-click="{{save}}">Save</button>
+    <br/><br/>
+    <category-table id="category-table" 
+      categories="{{categories}}">
+    </category-table>
+    <br/>
+    <garden-table id="garden-table" 
+      gardens="{{gardens}}" 
+      categories="{{categories}}">
+    </garden-table>
+  </template>
+  <script type="application/dart" src="polymer_app.dart"></script>
+</polymer-element>

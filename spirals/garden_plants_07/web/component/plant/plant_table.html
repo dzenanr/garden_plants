@@ -1,5 +1,6 @@
-<polymer-element name="category-table">
-  <link rel="import" href="category_add.html"/>
+<polymer-element name="plant-table">
+  <link rel="import" href="plant_add.html"/>
+  <link rel="import" href="plant_edit.html"/>
   <template>
     <style>
       table {
@@ -44,6 +45,21 @@
         background: orangered;
         border-color: blue;
       } 
+      a:link {
+        text-decoration: none;
+        font-weight: bold;
+        color: #003366;
+      }   
+      a:visited {
+        text-decoration: none;
+        font-weight: bold;
+        color: #c50000;
+      }   
+      a:hover {
+        text-decoration: none;
+        color: #d9ece2;
+        background: #663117;
+      }
       .marker {
         font-family: arial, sans-serif;
         font-size: 16px;
@@ -53,27 +69,44 @@
         padding: 1px;
       } 
     </style>
+    <template if="{{showAdd}}">
+      <plant-add 
+        garden="{{garden}}" 
+        categories="{{categories}}"
+      >
+      </plant-add>
+    </template>
+    <template if="{{showEdit}}">
+      <plant-edit 
+        plant="{{plant}}"
+      >
+      </plant-edit>
+    </template>
     <table>
       <caption class="marker">
-        Categories
+        <template if="{{garden == null}}">
+          Plants of {{category.latinName}}
+        </template>
+        <template if="{{category == null}}">
+          Plants of {{garden.name}}
+        </template> 
         <button id="show-add" on-click="{{show}}">Show Add</button>
       </caption>
       <tr>
-        <th>Latin Name</th>
-        <th>Description</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Remove</th>
       </tr>
-      <tbody template repeat="{{category in categories.internalList}}">
+      <tbody template repeat="{{plant in plants.internalList}}">
         <tr>
-          <td>{{category.latinName}}</td>
-          <td>{{category.description}}</td>
+          <td>{{plant.name}}</td>
+          <td>{{plant.category.latinName}}</td>
+          <td><button on-click="{{edit}}" plant-name="{{plant.name}}">Edit</button></td>
+          <td><button on-click="{{delete}}" plant-name="{{plant.name}}">Remove</button></td>
         </tr>
       </tbody>
     </table>
-    <template if="{{showAdd}}">
-      <category-add
-        categories="{{categories}}">
-      </category-add>
-    </template>
   </template>
-  <script type="application/dart" src="category_table.dart"></script>
+  <script type="application/dart" src="plant_table.dart"></script>
 </polymer-element>

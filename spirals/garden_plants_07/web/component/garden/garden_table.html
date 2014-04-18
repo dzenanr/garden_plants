@@ -1,5 +1,7 @@
-<polymer-element name="category-table">
-  <link rel="import" href="category_add.html"/>
+<polymer-element name="garden-table">
+  <link rel="import" href="garden_add.html"/>
+  <link rel="import" href="garden_edit.html"/>
+  <link rel="import" href="../plant/plant_table.html"/>
   <template>
     <style>
       table {
@@ -55,25 +57,46 @@
     </style>
     <table>
       <caption class="marker">
-        Categories
+        Gardens
         <button id="show-add" on-click="{{show}}">Show Add</button>
       </caption>
       <tr>
-        <th>Latin Name</th>
+        <th>Name</th>
         <th>Description</th>
+        <th>Edit</th>
+        <th>Remove</th>
+        <th>Plants</th>
       </tr>
-      <tbody template repeat="{{category in categories.internalList}}">
+      <tbody template repeat="{{garden in gardens.internalList}}">
         <tr>
-          <td>{{category.latinName}}</td>
-          <td>{{category.description}}</td>
+          <td>{{garden.name}}</td>
+          <td>{{garden.description}}</td>
+          <td><button on-click="{{edit}}" garden-name="{{garden.name}}">Edit</button></td>
+          <td><button on-click="{{delete}}" garden-name="{{garden.name}}">Remove</button></td>
+          <td><button on-click="{{showGardenPlants}}" garden-name="{{garden.name}}">Show</button>
         </tr>
       </tbody>
     </table>
     <template if="{{showAdd}}">
-      <category-add
-        categories="{{categories}}">
-      </category-add>
+      <garden-add
+        gardens="{{gardens}}">
+      </garden-add>
+    </template>
+    <template if="{{showEdit}}">
+      <garden-edit
+        gardens="{{gardens}}"
+        garden="{{garden}}"
+      >
+      </garden-edit>
+    </template>
+    <br/>
+    <template if="{{showPlants}}">
+      <plant-table id="plant-table"
+        garden="{{garden}}"
+        categories="{{categories}}"
+      >
+      </plant-table>
     </template>
   </template>
-  <script type="application/dart" src="category_table.dart"></script>
+  <script type="application/dart" src="garden_table.dart"></script>
 </polymer-element>
