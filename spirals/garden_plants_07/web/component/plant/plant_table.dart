@@ -34,16 +34,6 @@ class PlantTable extends PolymerElement {
       showAdd = false;
       addLink.text = 'Show Add';
     }  
-
-    /*
-    if (addLink.text == 'Show Add') {
-      showAdd = true;
-      addLink.text = 'Hide Add';
-    } else {
-      showAdd = false;
-      addLink.text = 'Show Add';
-    }
-    */
   }
 
   edit(Event e, var detail, Element target) {
@@ -57,6 +47,5 @@ class PlantTable extends PolymerElement {
     plant = plants.firstWhereAttribute('name', plantName);
     plant.garden.plants.remove(plant);  // internal
     plant.category.plants.remove(plant); // external
-    //plants.remove(plant);
   }
 }
